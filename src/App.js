@@ -1,25 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useRef } from 'react'
+import 'bootstrap/dist/css/bootstrap.min.css'
+import MyNav from './components/MyNav'
 
-function App() {
+const App = () => {
+  const normalRef = useRef(null)
+  const workRef = useRef(null)
+  const pictureRef = useRef(null)
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <MyNav
+        normalRef={normalRef}
+        workRef={workRef}
+        pictureRef={pictureRef}
+      />
+      <div ref={normalRef} style={{ width: '100%', height: '100vh', backgroundColor: 'pink' }}>
+        
+      </div>
+      <div ref={workRef} style={{ width: '100%', height: '100vh', backgroundColor: '#f39c12' }}>
+        
+      </div>
+      <div ref={pictureRef} style={{ width: '100%', height: '100vh', backgroundColor: '#1abc9c' }}>
+        
+      </div>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
