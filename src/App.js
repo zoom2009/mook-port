@@ -1,6 +1,7 @@
 import React, { useRef } from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import MyNav from './components/MyNav'
+import Favicon from 'react-favicon'
 
 const App = () => {
   const normalRef = useRef(null)
@@ -9,6 +10,7 @@ const App = () => {
 
   return (
     <div>
+      <Favicon url='favicon.ico' />
       <MyNav
         normalRef={normalRef}
         workRef={workRef}

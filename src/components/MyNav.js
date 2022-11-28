@@ -13,9 +13,9 @@ const MyNav = ({
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
-            <Nav.Link onClick={() => normalRef.current.scrollIntoView()}>ทั่วไป</Nav.Link>
-            <Nav.Link onClick={() => workRef.current.scrollIntoView()}>ผลงาน</Nav.Link>
-            <Nav.Link onClick={() => pictureRef.current.scrollIntoView()}>ภาคผนวช</Nav.Link>
+            <Nav.Link onClick={() => normalRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' })}>ทั่วไป</Nav.Link>
+            <Nav.Link onClick={() => workRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' })}>ผลงาน</Nav.Link>
+            <Nav.Link onClick={() => pictureRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' })}>ภาคผนวช</Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>
