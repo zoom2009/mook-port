@@ -1,5 +1,5 @@
 const _0 = (`
-  <div class=\"title\"><h1>Halloween's stories</h1><img src='https://raw.githubusercontent.com/pylnata/livebook/master/public/images/0.png' /></div>
+  <div class="title"><h1>Halloween's stories</h1><img src='https://raw.githubusercontent.com/pylnata/livebook/master/public/images/0.png' /></div>
 `)
 
 const _1 = (`

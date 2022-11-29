@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import {
   useSprings,
   animated,
@@ -61,7 +61,6 @@ const Book = () => {
   // }, []);
 
   // TODO: disable drag until previous action is'nt finshed
-  const [previousWasFinished, setPreviousWasFinished] = useState(true);
 
   const [props, set] = useSprings(pages.length, i => ({
     ...to(i),
@@ -71,9 +70,9 @@ const Book = () => {
 // TODO: on hover make bottom corner of first page flipping
   const onHoverHandler = ({ hovering, down }) => {
     return false;
-    if (hovering) {
-      if (down) return false;
-    }
+    // if (hovering) {
+    //   if (down) return false;
+    // }
   };
 
   const onDragHandler = ({
@@ -159,8 +158,6 @@ const Book = () => {
     //setPreviousWasFinished(true);
     //if (!down) return;
 
-    setPreviousWasFinished(false);
-
     const onFinishTurnFromRight = () => {
       set(i => {
         if (i === index)
@@ -208,7 +205,6 @@ const Book = () => {
       });
 
       console.log("finished-right");
-      setPreviousWasFinished(true);
     };
 
     const onFinishTurnFromLeft = () => {
@@ -249,12 +245,10 @@ const Book = () => {
         return { ...to, z: 0, display: "none", immediate: true };
       });
       console.log("finished-left");
-      setPreviousWasFinished(true);
     };
 
     const onRestFnLeft = () => {
       if (!down && needFinishTurn) onFinishTurnFromLeft();
-      else if (!needFinishTurn && !down) setPreviousWasFinished(true);
     };
 
     const onRestFnRight = x => {
@@ -262,7 +256,6 @@ const Book = () => {
         onFinishTurnFromRight();
       }
       else if (!down && !needFinishTurn) {
-        setPreviousWasFinished(true);
       }
     };
 
